@@ -1,0 +1,9 @@
+==============================================================================
+testDemo7 :: To validate the Login form                                       
+==============================================================================
+Validate UnSuccessful Login                                           | PASS |
+------------------------------------------------------------------------------
+testDemo7 :: To validate the Login form                               | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\Users\ashus\PycharmProjects\RobotFramework\tests\pabot_results\0\output.xml

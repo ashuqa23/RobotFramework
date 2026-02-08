@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-12-25T11:02:17.785622" rpa="false" schemaversion="5">
+<suite id="s1" name="testDemo7" source="C:\Users\ashus\PycharmProjects\RobotFramework\tests\testDemo7.robot">
+<test id="s1-t1" name="Validate UnSuccessful Login" line="20">
+<kw name="Open Browser In Incognito" owner="Generic" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-12-25T11:02:18.325056" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F6FB8A7E00&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-25T11:02:18.324163" elapsed="0.001027"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-25T11:02:18.325657" elapsed="0.000581"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-25T11:02:18.326616" elapsed="0.000503"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:18.328128" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-12-25T11:02:18.327496" elapsed="2.608718"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:20.937327" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-25T11:02:20.936683" elapsed="0.534875"/>
+</kw>
+<status status="PASS" start="2025-12-25T11:02:18.321114" elapsed="3.151072"/>
+</kw>
+<kw name="Fill the login form" owner="LandingPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-25T11:02:21.474993" elapsed="3.940271"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:25.418184" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-25T11:02:25.415743" elapsed="0.248360"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:25.665477" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-12-25T11:02:25.748968" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-25T11:02:25.664542" elapsed="0.254142"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:25.920884" level="INFO">Clicking button 'signInBtn'.</msg>
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-25T11:02:25.919565" elapsed="0.196246"/>
+</kw>
+<arg>${user_name}</arg>
+<arg>${invalid_password}</arg>
+<status status="PASS" start="2025-12-25T11:02:21.473284" elapsed="4.642878"/>
+</kw>
+<kw name="wait until Element is located in the page" owner="LandingPage">
+<kw name="Wait Until element passed is located on Page" owner="Generic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${page_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-25T11:02:26.121585" elapsed="2.024780"/>
+</kw>
+<arg>${Error_Message_Login}</arg>
+<status status="PASS" start="2025-12-25T11:02:26.119815" elapsed="2.026913"/>
+</kw>
+<status status="PASS" start="2025-12-25T11:02:26.118248" elapsed="2.028894"/>
+</kw>
+<kw name="verify error message is correct" owner="LandingPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:28.205387" level="INFO">${result} = Incorrect username/password.</msg>
+<var>${result}</var>
+<arg>css:.alert-danger</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-25T11:02:28.148988" elapsed="0.056524"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-12-25T11:02:28.205964" elapsed="0.000748"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-12-25T11:02:28.208000" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<arg>${Error_Message_Login}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-12-25T11:02:28.207199" elapsed="0.032109"/>
+</kw>
+<status status="PASS" start="2025-12-25T11:02:28.147881" elapsed="0.091825"/>
+</kw>
+<kw name="Close Browser Session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-25T11:02:28.242897" elapsed="2.433735"/>
+</kw>
+<status status="PASS" start="2025-12-25T11:02:28.240520" elapsed="2.436858"/>
+</kw>
+<status status="PASS" start="2025-12-25T11:02:18.319067" elapsed="12.358813"/>
+</test>
+<doc>To validate the Login form</doc>
+<status status="PASS" start="2025-12-25T11:02:17.825457" elapsed="12.855797"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testDemo7" id="s1" pass="1" fail="0" skip="0">testDemo7</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

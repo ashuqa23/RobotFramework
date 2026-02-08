@@ -1,0 +1,16 @@
+--test testDemo7.Validate Cards display in the shopping page
+--variable CALLER_ID:1b12c1f3a71b4518bf2ea37d86a695a7
+--variable PABOTLIBURI:127.0.0.1:8270
+--variable PABOTEXECUTIONPOOLID:0
+--variable PABOTISLASTEXECUTIONINPOOL:1
+--variable PABOTNUMBEROFPROCESSES:4
+--variable PABOTQUEUEINDEX:1
+--variable PABOTLASTLEVEL:
+--listener RobotStackTracer
+--log NONE
+--report NONE
+--xunit NONE
+--outputdir .\pabot_results\1
+--consolecolors off
+--consolemarkers off
+testDemo7.robot
